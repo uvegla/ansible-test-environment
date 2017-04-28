@@ -42,6 +42,28 @@ Try the following command to test your infrastucture.
 ansible all -m ping
 ```
 
+## Examples
+
+### Install telnet on your centos node
+
+On your control server execute the following command.
+
+```bash
+ansible centos -s -m yum -a "name=telnet state=latest"
+```
+
+### Install Apache 2 on your ubuntu node
+
+```bash
+ansible ubuntu -s -m apt -a "name=apache2 state=latest"
+```
+
+SSH into your Ubuntu 14.04 node and test it.
+
+```bash
+service apache2 status
+```
+
 ## Tear down infrastructure
 
 Execute the following snippet in the project's root directory.
